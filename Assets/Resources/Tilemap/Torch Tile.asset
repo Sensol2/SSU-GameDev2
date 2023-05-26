@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
+  m_Name: Torch Tile
+  m_EditorClassIdentifier: 
+  m_AnimatedSprites:
+  - {fileID: -234553884, guid: 28324dd3b159f984d905bf9980c4b88b, type: 3}
+  - {fileID: 1312325372, guid: 28324dd3b159f984d905bf9980c4b88b, type: 3}
+  - {fileID: 938252222, guid: 28324dd3b159f984d905bf9980c4b88b, type: 3}
+  - {fileID: -1648124016, guid: 28324dd3b159f984d905bf9980c4b88b, type: 3}
+  - {fileID: 350951634, guid: 28324dd3b159f984d905bf9980c4b88b, type: 3}
+  - {fileID: 1489271448, guid: 28324dd3b159f984d905bf9980c4b88b, type: 3}
+  - {fileID: -871305927, guid: 28324dd3b159f984d905bf9980c4b88b, type: 3}
+  - {fileID: -1172115623, guid: 28324dd3b159f984d905bf9980c4b88b, type: 3}
+  m_MinSpeed: 7
+  m_MaxSpeed: 7
+  m_AnimationStartTime: 0
+  m_AnimationStartFrame: 0
+  m_TileColliderType: 0
