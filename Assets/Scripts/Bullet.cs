@@ -6,7 +6,6 @@ using UnityEngine.Rendering;
 public class Bullet : MonoBehaviour
 {
     public float damage;
-    public float speed;
 
     [SerializeField]
     public GameObject effect;
@@ -18,12 +17,12 @@ public class Bullet : MonoBehaviour
         rigid = GetComponent<Rigidbody2D>();
     }
 
-    public void Init(float damage, Vector3 dir)
+    public void Init(float damage, float bulletSpeed, Vector3 dir)
     {
         this.damage = damage;
-
-        rigid.velocity = dir * speed;
+        rigid.velocity = dir * bulletSpeed;
     }
+
 	private void OnTriggerEnter2D(Collider2D coll)
 	{
         if (coll.CompareTag("Enemy") || coll.CompareTag("Wall"))

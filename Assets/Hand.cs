@@ -20,31 +20,34 @@ public class Hand : MonoBehaviour
 
     private void FixedUpdate()
     {
+        Vector2 targetPos;
         if (player.scanner.nearestTarget != null)
         {
-            Vector2 targetPos = player.scanner.nearestTarget.transform.position;
-            Vector2 myPos = transform.position;
-
-            // Get direction to target
-            Vector2 direction = targetPos - myPos;
-
-            // Calculate angle
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-
-            // Adjust for flipX
-            if (player.isFliped)
-            {
-                angle = (angle > 0) ? angle - 180 : angle + 180;
-            }
-
-            // Rotate towards the target
-            transform.rotation = Quaternion.Euler(0, 0, angle);
+            targetPos = player.scanner.nearestTarget.transform.position;
         }
         else 
         {
-            transform.rotation = Quaternion.Euler(0, 0, 0);
+            Vector2 mousePos = Input.mousePosition;
+            mousePos = Camera.main.ScreenToWorldPoint(mousePos);
+            targetPos = new Vector3(mousePos.x, mousePos.y, 0);
         }
-        
+
+        Vector2 myPos = transform.position;
+
+        // Get direction to target
+        Vector2 direction = targetPos - myPos;
+
+        // Calculate angle
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+        // Adjust for flipX
+        if (player.isFliped)
+        {
+            angle = (angle > 0) ? angle - 180 : angle + 180;
+        }
+
+        // Rotate towards the target
+        transform.rotation = Quaternion.Euler(0, 0, angle);
     }
 
     private void LateUpdate()

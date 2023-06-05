@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class Player : MonoBehaviour
 {
@@ -9,11 +10,18 @@ public class Player : MonoBehaviour
     public bool isFliped;
     public RuntimeAnimatorController[] animCon;
     public Scanner scanner;
+    public Weapon weapon;
+
+    // 대쉬 관련 변수 추가
+    public float dashDistance = 1f;
+    public float dashTime = 0.2f;
+    private float lastDash = -10.0f;
+    public float dashCoolDown = 0.5f;
 
     Rigidbody2D rigid;
     SpriteRenderer spriter;
     Animator anim;
-
+    Material mat;
 
     void Awake()
     {
@@ -21,35 +29,52 @@ public class Player : MonoBehaviour
         spriter = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
         scanner = GetComponent<Scanner>();
+        mat = GetComponent<Renderer>().material;
+        weapon = GetComponentInChildren<Weapon>();
     }
 
     void Update()
     {
-        inputVec.x = Input.GetAxisRaw("Horizontal"); //Raw로 명확한 컨트롤 구현
+        inputVec.x = Input.GetAxisRaw("Horizontal");
         inputVec.y = Input.GetAxisRaw("Vertical");
+
+        // 대쉬 입력 확인 및 실행
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Dash();
+            lastDash = Time.time;
+        }
     }
 
-    //물리에 대해서는 FixedUpadate로 이용
     private void FixedUpdate()
     {
         Vector2 nextVec = inputVec * speed * Time.fixedDeltaTime;
         rigid.MovePosition(rigid.position + nextVec);
     }
 
-    private void LateUpdate() //프레임이 종료 되기 전 실행되는 생명주기 함수
+    private void LateUpdate()
     {
         anim.SetFloat("Speed", inputVec.magnitude);
 
-
-        if (scanner.nearestTarget != null)
+        if (scanner.nearestTarget != null && Input.GetMouseButton(0))
         {
             spriter.flipX = scanner.nearestTarget.position.x < this.transform.position.x;
             isFliped = scanner.nearestTarget.position.x < this.transform.position.x;
         }
-        else if (inputVec.x != 0)
+        else
         {
-            spriter.flipX = inputVec.x < 0;
-            isFliped = inputVec.x < 0;
+            Vector2 mousePos = Input.mousePosition;
+            mousePos = Camera.main.ScreenToWorldPoint(mousePos);
+            spriter.flipX = mousePos.x < this.transform.position.x;
+            isFliped = mousePos.x < this.transform.position.x;
         }
+    }
+
+    // 대쉬 기능 구현
+    void Dash()
+    {
+        mat.EnableKeyword("SHADOW_ON");
+        Vector3 dashPosition = transform.position + new Vector3(inputVec.x, inputVec.y, 0) * dashDistance;
+        transform.DOMove(dashPosition, dashTime).OnComplete(()=> { mat.DisableKeyword("SHADOW_ON"); });
     }
 }
