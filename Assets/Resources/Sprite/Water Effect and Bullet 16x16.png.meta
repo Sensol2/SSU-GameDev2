@@ -1692,7 +1692,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Water Effect and Bullet 16x16_75
+      name: ShotgunBulle
       rect:
         serializedVersion: 2
         x: 129
@@ -5982,7 +5982,6 @@ TextureImporter:
       Water Effect and Bullet 16x16_213: 768882545
       Water Effect and Bullet 16x16_96: -1100037049
       Water Effect and Bullet 16x16_64: -1709681446
-      Water Effect and Bullet 16x16_75: 470465884
       Water Effect and Bullet 16x16_98: -604177905
       Water Effect and Bullet 16x16_24: -725379769
       Water Effect and Bullet 16x16_259: 1472185187
@@ -6003,6 +6002,7 @@ TextureImporter:
       Water Effect and Bullet 16x16_251: 2040882759
       Water Effect and Bullet 16x16_231: 383321414
       Water Effect and Bullet 16x16_200: -1579006574
+      ShotgunBulle: 470465884
       Water Effect and Bullet 16x16_209: -1407583931
       Water Effect and Bullet 16x16_147: 364887992
       Water Effect and Bullet 16x16_151: -328972722

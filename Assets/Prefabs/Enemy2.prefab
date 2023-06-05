@@ -244,6 +244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 15
+  damage: 10
   speed: 3
   target: {fileID: 0}
   detectionRadius: 5

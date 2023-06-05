@@ -1,17 +1,23 @@
+using Com.LuisPedroFonseca.ProCamera2D;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class ExplosiveBox : MonoBehaviour
 {
+    ProCamera2DShake proCamera2DShake;
     [SerializeField]
     public GameObject effect;
-
-
-    private void OnTriggerEnter2D(Collider2D coll)
+    private void Start()
+    {
+        proCamera2DShake = Camera.main.GetComponent<ProCamera2DShake>();
+    }
+        private void OnTriggerEnter2D(Collider2D coll)
     {
         if (coll.CompareTag("Bullet"))
         {
+            proCamera2DShake.Shake(1f, Vector2.one);
             PlayVFX();
             Destroy(this.gameObject);
         }

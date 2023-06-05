@@ -31,6 +31,7 @@ public class Enemy : MonoBehaviour
 		spriter.DOFade(0, 0.5f).OnComplete(() => { Destroy(this.gameObject); });
 	}
 
+	public float damage;
 	public float speed;
     public Rigidbody2D target;
 	public float detectionRadius = 5.0f;

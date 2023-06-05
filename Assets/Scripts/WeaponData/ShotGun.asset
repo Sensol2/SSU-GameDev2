@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponName: ShotGun
   sprite: {fileID: 1941523733, guid: 8aedf5809f85b9b48bad48765afaebb3, type: 3}
-  bullet: {fileID: 2881922368817287390, guid: 95e497775dc997b4899e9de91211b37b, type: 3}
-  id: 2
-  damage: 2
-  speed: 0.1
+  bullet: {fileID: 2401814913614004269, guid: a4e6b8b39ab367349920b91d8b2ee061, type: 3}
+  id: 3
+  damage: 5
+  speed: 1
   bulletSpeed: 25

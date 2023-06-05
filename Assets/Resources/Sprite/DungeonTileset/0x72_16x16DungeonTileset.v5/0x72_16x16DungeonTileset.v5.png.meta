@@ -1283,7 +1283,11 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 1, y: 8}
+        - {x: 1, y: -8}
+        - {x: 8, y: -8}
+        - {x: 8, y: 8}
       tessellationDetail: 0
       bones: []
       spriteID: 1ea67311b3adb234cbaf3a9e2bef2fc6
@@ -1304,7 +1308,11 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -1, y: -8}
+        - {x: -1, y: 8}
+        - {x: -8, y: 8}
+        - {x: -8, y: -8}
       tessellationDetail: 0
       bones: []
       spriteID: 255ccb66643c3b94e909437af93996f0
@@ -6095,12 +6103,12 @@ TextureImporter:
       0x72_16x16DungeonTileset.v5_192: -1548092882
       0x72_16x16DungeonTileset.v5_169: 1461966951
       0x72_16x16DungeonTileset.v5_111: 2078272078
+      0x72_16x16DungeonTileset.v5_4: -1202653629
       0x72_16x16DungeonTileset.v5_41: -994915874
       0x72_16x16DungeonTileset.v5_121: 1445671852
       0x72_16x16DungeonTileset.v5_215: 1174220221
       0x72_16x16DungeonTileset.v5_148: 1328761106
       0x72_16x16DungeonTileset.v5_231: -481237241
-      0x72_16x16DungeonTileset.v5_38: -1322329310
       0x72_16x16DungeonTileset.v5_49: -237187397
       0x72_16x16DungeonTileset.v5_118: 197307409
       0x72_16x16DungeonTileset.v5_134: 372586915
@@ -6393,17 +6401,17 @@ TextureImporter:
       0x72_16x16DungeonTileset.v5_211: -905649903
       0x72_16x16DungeonTileset.v5_18: 834872187
       0x72_16x16DungeonTileset.v5_178: 659631710
-      0x72_16x16DungeonTileset.v5_171: 2139122262
       0x72_16x16DungeonTileset.v5_63: 1226703597
-      0x72_16x16DungeonTileset.v5_300: -336249638
+      0x72_16x16DungeonTileset.v5_171: 2139122262
+      0x72_16x16DungeonTileset.v5_38: -1322329310
       0x72_16x16DungeonTileset.v5_295: -551258347
       0x72_16x16DungeonTileset.v5_262: 2041980575
-      0x72_16x16DungeonTileset.v5_23: 175711159
       0x72_16x16DungeonTileset.v5_79: -1527863011
-      0x72_16x16DungeonTileset.v5_4: -1202653629
+      0x72_16x16DungeonTileset.v5_23: 175711159
+      0x72_16x16DungeonTileset.v5_140: -1978234987
+      0x72_16x16DungeonTileset.v5_300: -336249638
       0x72_16x16DungeonTileset.v5_26: -1153189015
       0x72_16x16DungeonTileset.v5_138: 1478132754
-      0x72_16x16DungeonTileset.v5_140: -1978234987
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

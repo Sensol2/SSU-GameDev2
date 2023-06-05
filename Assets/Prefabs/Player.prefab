@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5580746324170670801}
   - component: {fileID: 5580746324170670803}
   m_Layer: 0
-  m_Name: RightGun
+  m_Name: weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -110,10 +110,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bc7190e1fbf27c4f988624a6526f32e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponDatas:
+  - {fileID: 11400000, guid: 155cbc99bed878346ba1b89e9c0af251, type: 2}
+  - {fileID: 11400000, guid: 155cbc99bed878346ba1b89e9c0af251, type: 2}
+  - {fileID: 11400000, guid: ad66edbc3e7523643aa86b77b55c2d14, type: 2}
+  - {fileID: 11400000, guid: 229ea1ea2d2673e408847ddf130a7aa6, type: 2}
   id: 1
-  prefabId: 1
   damage: 3
   speed: 0.3
+  bulletSpeed: 0
   bullet: {fileID: 2881922368817287390, guid: 95e497775dc997b4899e9de91211b37b, type: 3}
 --- !u!1 &5580746324491848337
 GameObject:
@@ -161,9 +166,10 @@ GameObject:
   - component: {fileID: 5580746324690267585}
   - component: {fileID: 5580746324690267599}
   - component: {fileID: 5580746324690267584}
+  - component: {fileID: 2077135045}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -207,7 +213,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: afc6b26edaad5e24ba2cfe19686b2ff4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -309,10 +315,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputVec: {x: 0, y: 0}
-  speed: 5
+  speed: 7
   isFliped: 0
   animCon: []
   scanner: {fileID: 0}
+  weapon: {fileID: 5580746324170670803}
+  hp: 100
+  mp: 300
+  isInvincible: 0
+  dashDistance: 2.5
+  dashTime: 0.2
+  dashCoolDown: 0.5
 --- !u!114 &5580746324690267584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -330,6 +343,22 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   nearestTarget: {fileID: 0}
+--- !u!114 &2077135045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5580746324690267592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee158225ee1e59f4791627785501d950, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shaderTypes: 0
+  normalStrength: 5
+  normalSmoothing: 1
+  computingNormal: 0
 --- !u!1 &5580746325316738582
 GameObject:
   m_ObjectHideFlags: 0
@@ -511,8 +540,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bc7190e1fbf27c4f988624a6526f32e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponDatas: []
   id: 2
-  prefabId: 2
   damage: 5
   speed: 0.3
+  bulletSpeed: 0
   bullet: {fileID: 2881922368817287390, guid: 95e497775dc997b4899e9de91211b37b, type: 3}
