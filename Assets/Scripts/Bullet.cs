@@ -11,6 +11,7 @@ public class Bullet : MonoBehaviour
     public GameObject effect;
 
     Rigidbody2D rigid;
+    public AudioClip clip;
 
     private void Awake()
     {
@@ -28,6 +29,7 @@ public class Bullet : MonoBehaviour
         if (coll.CompareTag("Enemy") || coll.CompareTag("Wall"))
         {
             rigid.velocity = Vector2.zero;
+            SoundManager.instance.PlaySound(clip);
             PlayVFX();
             Destroy(this.gameObject);
         }

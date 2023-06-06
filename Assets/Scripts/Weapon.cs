@@ -14,6 +14,7 @@ public class Weapon : MonoBehaviour
     public float damage;
     public float speed;
     public float bulletSpeed;
+    AudioClip gunSound;
     public GameObject bullet;
 
     float timer;
@@ -28,6 +29,7 @@ public class Weapon : MonoBehaviour
         ChangeWeapon(1);
     }
 
+
     public void ChangeWeapon(int id)
     {
         this.id = weaponDatas[id].id;
@@ -36,10 +38,14 @@ public class Weapon : MonoBehaviour
         this.bullet = weaponDatas[id].bullet;
         this.bulletSpeed = weaponDatas[id].bulletSpeed;
         this.spriter.sprite = weaponDatas[id].sprite;
+        this.gunSound = weaponDatas[id].gunSound;
     }
 
     void Update()
     {
+        if (proCamera2DShake == null)
+            proCamera2DShake = Camera.main.GetComponent<ProCamera2DShake>();
+
         switch (id)
         {
             case 0: // 근접
@@ -52,6 +58,15 @@ public class Weapon : MonoBehaviour
                 {
                     timer = 0f;
                     ShotgunFire();
+                }
+                break;
+            case 4: // m16a4
+                timer += Time.deltaTime;
+
+                if (timer > speed)
+                {
+                    timer = 0f;
+                    M16A4Fire();
                 }
                 break;
             default: //원거리
@@ -92,7 +107,7 @@ public class Weapon : MonoBehaviour
         GameObject obj = Instantiate(bullet, transform.position, Quaternion.Euler(0, 0, angle));
         obj.GetComponent<Bullet>().Init(damage, bulletSpeed, dir);
 
-        SoundManager.instance.PlayShootSound();
+        SoundManager.instance.PlaySound(gunSound);
     }
 
     private void ShotgunFire()
@@ -130,7 +145,45 @@ public class Weapon : MonoBehaviour
             obj.GetComponent<Bullet>().Init(damage, bulletSpeed, bulletDirection);
         }
 
-        SoundManager.instance.PlayShootSound();
+        SoundManager.instance.PlaySound(gunSound);
     }
 
+    private void M16A4Fire()
+    {
+        if (!Input.GetMouseButton(0))
+            return;
+
+        StartCoroutine(M16A4BurstFire());
+    }
+
+    private IEnumerator M16A4BurstFire()
+    {
+
+        for (int i = 0; i < 3; i++)
+        {
+            Vector3 targetPos;
+
+            if (player.scanner.nearestTarget != null)
+            {
+                targetPos = player.scanner.nearestTarget.position;
+            }
+            else
+            {
+                Vector2 mousePos = Input.mousePosition;
+                mousePos = Camera.main.ScreenToWorldPoint(mousePos);
+                targetPos = new Vector3(mousePos.x, mousePos.y, 0);
+            }
+
+            Vector3 dir = targetPos - transform.position;
+            dir = dir.normalized;
+
+            float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg + 180;
+            GameObject obj = Instantiate(bullet, transform.position, Quaternion.Euler(0, 0, angle));
+            obj.GetComponent<Bullet>().Init(damage, bulletSpeed, dir);
+
+            SoundManager.instance.PlaySound(gunSound);
+
+            yield return new WaitForSeconds(0.1f);
+        }
+    }
 }

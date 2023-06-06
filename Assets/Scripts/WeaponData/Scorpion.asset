@@ -19,3 +19,4 @@ MonoBehaviour:
   damage: 2
   speed: 0.1
   bulletSpeed: 35
+  gunSound: {fileID: 8300000, guid: f27e51ef2695a5f43b415f5da3ef6a26, type: 3}

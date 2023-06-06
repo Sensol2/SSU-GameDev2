@@ -24,4 +24,7 @@ public class WeaponData : ScriptableObject
     [SerializeField]
     public float bulletSpeed;
 
+    [SerializeField]
+    public AudioClip gunSound;
+
 }

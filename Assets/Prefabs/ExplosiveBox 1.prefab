@@ -115,6 +115,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca2f4cebb7d0b8e4cb9a7d6ed1d2f2fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 64
   effect: {fileID: 1033472435718110, guid: f43435781114624418ca42a563284b17, type: 3}
 --- !u!61 &5718511769827017177
 BoxCollider2D:

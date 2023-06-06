@@ -10,11 +10,23 @@ public class SoundManager : MonoBehaviour
 
 	private void Awake()
 	{
-        instance = this;
-	}
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(this);
+        }
+        else {
+            Destroy(this);
+        }
+    }
 
     public void PlayShootSound()
     {
         audioSource.PlayOneShot(shoot);
+    }
+
+    public void PlaySound(AudioClip clip)
+    {
+        audioSource.PlayOneShot(clip);
     }
 }

@@ -58,6 +58,8 @@ public class Player : MonoBehaviour
         scanner = GetComponent<Scanner>();
         mat = GetComponent<Renderer>().material;
         weapon = GetComponentInChildren<Weapon>();
+
+        DontDestroyOnLoad(this);
     }
 
     void Update()

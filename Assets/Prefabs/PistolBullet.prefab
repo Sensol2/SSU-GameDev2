@@ -138,3 +138,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   effect: {fileID: 100002, guid: 055899d2e5aad2145a9d0a6c98d7c436, type: 3}
+  clip: {fileID: 8300000, guid: afa99a993d3e47d43b469227a3f70279, type: 3}

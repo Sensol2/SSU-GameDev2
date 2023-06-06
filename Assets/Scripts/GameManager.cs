@@ -10,5 +10,7 @@ public class GameManager : MonoBehaviour
 	private void Awake()
 	{
 		instance = this;
+		player = GameObject.Find("Player").GetComponent<Player>();
 	}
+
 }

@@ -1671,7 +1671,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Water Effect and Bullet 16x16_74
+      name: M4Bullet
       rect:
         serializedVersion: 2
         x: 117
@@ -5898,7 +5898,6 @@ TextureImporter:
       Water Effect and Bullet 16x16_30: -1101882952
       Water Effect and Bullet 16x16_119: -1021269999
       Water Effect and Bullet 16x16_136: 114453611
-      Water Effect and Bullet 16x16_74: -1023635201
       Water Effect and Bullet 16x16_55: -1193740108
       Water Effect and Bullet 16x16_131: 1903440615
       Water Effect and Bullet 16x16_166: -222925691
@@ -5960,6 +5959,7 @@ TextureImporter:
       Water Effect and Bullet 16x16_157: -181027207
       Water Effect and Bullet 16x16_219: -287422957
       Water Effect and Bullet 16x16_189: 946681475
+      M4Bullet: -1023635201
       Water Effect and Bullet 16x16_110: 2024178258
       Water Effect and Bullet 16x16_8: -225632919
       Water Effect and Bullet 16x16_167: 1832159026

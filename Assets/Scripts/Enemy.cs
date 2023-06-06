@@ -24,18 +24,15 @@ public class Enemy : MonoBehaviour
 		}
 	}
 
-	private void Dead()
-	{
-		isLive = false;
-		anim.SetBool("isDead", true);
-		spriter.DOFade(0, 0.5f).OnComplete(() => { Destroy(this.gameObject); });
-	}
+
 
 	public float damage;
 	public float speed;
     public Rigidbody2D target;
 	public float detectionRadius = 5.0f;
 	public bool isLive;
+
+	AudioSource audioSource;
 	Rigidbody2D rigid;
     SpriteRenderer spriter;
 	Material mat;
@@ -48,6 +45,7 @@ public class Enemy : MonoBehaviour
         spriter = GetComponent<SpriteRenderer>();
 		anim = GetComponent<Animator>();
 		mat = GetComponent<Renderer>().material;
+		audioSource = GetComponent<AudioSource>();
 		isLive = true;
 	}
 
@@ -95,6 +93,7 @@ public class Enemy : MonoBehaviour
 		{
 			var dmg = coll.GetComponent<Bullet>().damage;
 			HP -= dmg;
+
 			StartCoroutine(PlayHitEffect());
 		}
 	}
@@ -106,5 +105,11 @@ public class Enemy : MonoBehaviour
 		mat.DisableKeyword("HITEFFECT_ON");
 	}
 
-
+	private void Dead()
+	{
+		isLive = false;
+		anim.SetBool("isDead", true);
+		SoundManager.instance.PlaySound(audioSource.clip);
+		spriter.DOFade(0, 0.5f).OnComplete(() => { Destroy(this.gameObject); });
+	}
 }

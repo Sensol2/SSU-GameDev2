@@ -1293,7 +1293,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Weapon_56
+      name: M4A1
       rect:
         serializedVersion: 2
         x: 32
@@ -1321,8 +1321,8 @@ TextureImporter:
         y: 32
         width: 32
         height: 11
-      alignment: 4
-      pivot: {x: 0, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.24290371, y: 0.32745048}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1419,7 +1419,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Weapon_62
+      name: m
       rect:
         serializedVersion: 2
         x: 96
@@ -1440,15 +1440,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Weapon_63
+      name: M16A4
       rect:
         serializedVersion: 2
         x: 128
         y: 16
         width: 26
         height: 12
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.31124818, y: 0.43456587}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1639,6 +1639,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Weapon_14: 1346206479
       Weapon_5: -1878861027
       Weapon_28: 123851327
       Weapon_59: -550362461
@@ -1656,11 +1657,9 @@ TextureImporter:
       Weapon_0: -1086976828
       Weapon_29: -1770584696
       Weapon_23: 180926638
-      Weapon_62: 1779206887
       Weapon_37: -1482990937
       Weapon_69: 1149066213
       Weapon_20: -566034699
-      Weapon_63: -1405615751
       Weapon_30: 2005228561
       Weapon_34: -1145766534
       Weapon_51: -1175746017
@@ -1672,29 +1671,28 @@ TextureImporter:
       Weapon_67: 1509034491
       Weapon_47: 1560785192
       Weapon_33: -1343130916
-      Weapon_44: -968210686
-      Weapon_56: 370212108
-      Weapon_7: 551499456
       Weapon_58: 970620751
       Weapon_40: 97278723
+      Weapon_7: 551499456
+      Weapon_44: -968210686
       Weapon_6: 1356211179
+      Weapon_46: -1408284676
       Weapon_41: 244721087
-      Weapon_1: 793246770
       Weapon_64: -646690747
       Weapon_24: -2099453719
-      Weapon_46: -1408284676
+      Weapon_1: 793246770
       Weapon_15: -65964420
-      Weapon_54: 1081472342
       Weapon_66: -1508372548
+      Weapon_54: 1081472342
       Weapon_25: -909214338
       Weapon_2: 1288271520
       Weapon_22: -933023462
       Weapon_4: 2125649324
       Weapon_32: -1863135420
       Weapon_36: 1038954726
-      Weapon_31: 1522354083
       Weapon_10: 1287335685
       Weapon_11: -206875225
+      Weapon_31: 1522354083
       Weapon_9: -44653894
       Weapon_52: -1952191071
       Weapon_71: 1197392191
@@ -1709,8 +1707,10 @@ TextureImporter:
       Weapon_17: -1205567777
       Weapon_21: 343104767
       Weapon_35: 2118255711
+      M16A4: -1405615751
       Scorpion: -400627900
-      Weapon_14: 1346206479
+      M4A1: 370212108
+      m: 1779206887
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

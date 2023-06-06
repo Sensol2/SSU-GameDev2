@@ -16,6 +16,7 @@ MonoBehaviour:
   sprite: {fileID: 1941523733, guid: 8aedf5809f85b9b48bad48765afaebb3, type: 3}
   bullet: {fileID: 2401814913614004269, guid: a4e6b8b39ab367349920b91d8b2ee061, type: 3}
   id: 3
-  damage: 5
+  damage: 4
   speed: 1
   bulletSpeed: 25
+  gunSound: {fileID: 8300000, guid: 37d6641f4792634428c1b557aca23036, type: 3}
